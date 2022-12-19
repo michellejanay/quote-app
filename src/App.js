@@ -1,17 +1,38 @@
 import './App.css'
-import Nav from './components/Nav'
+import React from 'react'
+import 'bootstrap-icons/font/bootstrap-icons.css'
+import { BrowserRouter, Route, Routes, Link } from 'react-router-dom'
 import Quotes from './pages/Quotes'
+import RandomQuote from './pages/RandomQuote'
+import Index from './pages/Index'
 
-function App() {
+const App = () => {
   return (
     <div className="App">
-      <Nav />
-      <main className='index-page'>
-        Hello and welcome to my quote app! This app was created using node,
-        express, glitch, github, vscode, react, and css. It is my first Full
-        Stack app and I hope you enjoy using it as much as I enjoyed creating
-        it.
-      </main>
+      <BrowserRouter>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/quotes/">Quotes</Link>
+            </li>
+            <li>
+              <Link to="/random-quote/">Random quotes</Link>
+            </li>
+            <li>
+              <input type="text" placeholder="Search" />
+              <i className="bi bi-search"></i>
+            </li>
+          </ul>
+        </nav>
+        <Routes>
+          <Route path="/" element={<Index />} />
+          <Route path="/quotes/" element={<Quotes />} />
+          <Route path="/random-quote/" element={<RandomQuote />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   )
 }

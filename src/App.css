@@ -15,8 +15,18 @@ nav ul {
 }
 nav ul li {
   list-style-type: none;
+}
+nav ul li a {
   color: white;
+  text-decoration: none;
+}
+.bi-search {
+  padding: 0 0.5rem;
 }
 .index-page {
-  margin: 20rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 0 2rem;
 }
