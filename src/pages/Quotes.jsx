@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
+import Quote from '../components/Quote'
 
 const Quotes = () => {
   const [search, setSearch] = useState()
@@ -22,6 +23,9 @@ const Quotes = () => {
         <input type="text" placeholder="Search" />
         <i className="bi bi-search" onChange={handleSearch}></i>
       </header>
+      {data.map((q) => (
+        <Quote quote={q.quote} author={q.author}></Quote>
+      ))}
     </div>
   )
 }
