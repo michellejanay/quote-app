@@ -19,12 +19,12 @@ const Quotes = () => {
   }, [])
   return (
     <div>
-      <header>
+      <header className="quotes-header">
         <input type="text" placeholder="Search" />
         <i className="bi bi-search" onChange={handleSearch}></i>
       </header>
       {data.map((q) => (
-        <Quote quote={q.quote} author={q.author}></Quote>
+        <Quote quote={q.quote} author={q.author} />
       ))}
     </div>
   )

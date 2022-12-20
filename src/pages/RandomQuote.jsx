@@ -1,13 +1,23 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Btn from '../components/Btn'
 import Nav from '../components/Nav'
+import Quote from '../components/Quote'
 
 const RandomQuote = () => {
+  const [randomData, setRandomData] = useState([])
+
+  useEffect(() => {
+    fetch('http://michellejanay-quote-server.glitch.me/quotes/random')
+      .then((response) => response.json())
+      .then((jsonData) => setRandomData(jsonData))
+  }, [])
+
   return (
     <div>
       <Nav />
-      <h3>Here is a quote</h3>
-      <p>Here is the author</p>
+      {[randomData].map((q) => (
+        <Quote quote={q.quote} author={q.author} />
+      ))}
       <Btn />
     </div>
   )
