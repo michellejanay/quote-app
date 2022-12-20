@@ -21,10 +21,6 @@ const App = () => {
             <li>
               <Link to="/random-quote/">Random quotes</Link>
             </li>
-            <li>
-              <input type="text" placeholder="Search" />
-              <i className="bi bi-search"></i>
-            </li>
           </ul>
         </nav>
         <Routes>
