@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Routes, Link } from 'react-router-dom'
 import Quotes from './pages/Quotes'
 import RandomQuote from './pages/RandomQuote'
 import Index from './pages/Index'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 const App = () => {
   return (
