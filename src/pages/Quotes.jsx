@@ -24,7 +24,7 @@ const Quotes = () => {
         <i className="bi bi-search" onChange={handleSearch}></i>
       </header>
       {data.map((q) => (
-        <Quote quote={q.quote} author={q.author} />
+        <Quote quote={q.quote} author={q.author} key={data.indexOf(q)} />
       ))}
     </div>
   )

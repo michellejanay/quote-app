@@ -5,21 +5,27 @@ import Quote from '../components/Quote'
 
 const RandomQuote = () => {
   const [randomData, setRandomData] = useState([])
-  // const [newQuote, setNewQuote] = useState(true)
+  const [clicked, setClicked] = useState(true)
+
+  const randomClick = () => {
+    setClicked(!clicked)
+  }
 
   useEffect(() => {
     fetch('http://michellejanay-quote-server.glitch.me/quotes/random')
       .then((response) => response.json())
-      .then((jsonData) => setRandomData(jsonData))
-  }, [])
+      .then((jsonData) => {
+        setRandomData(jsonData)
+      })
+  }, [clicked])
 
   return (
     <div>
       <Nav />
-      {[randomData].map((q) => (
-        <Quote quote={q.quote} author={q.author} />
+      {[randomData].map((q, i) => (
+        <Quote quote={q.quote} author={q.author} key={i} />
       ))}
-      <Btn onClick={() => setRandomData(randomData)} />
+      <Btn randomClick={randomClick} />
     </div>
   )
 }
