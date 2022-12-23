@@ -13,17 +13,9 @@ const RandomQuote = () => {
 
   useEffect(() => {
     fetch('http://michellejanay-quote-server.glitch.me/quotes/random')
-      .then((response) => {
-        if (response.ok) {
-          return response.json()
-        }
-        throw Error('Oops! Something went wrong')
-      })
+      .then((response) => response.json())
       .then((jsonData) => {
         setRandomData(jsonData)
-      })
-      .catch((error) => {
-        console.log(error)
       })
   }, [clicked])
 
