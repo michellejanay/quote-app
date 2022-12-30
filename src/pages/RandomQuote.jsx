@@ -12,7 +12,7 @@ const RandomQuote = () => {
   }
 
   useEffect(() => {
-    fetch('http://michellejanay-quote-server.glitch.me/quotes/random')
+    fetch('https://michellejanay-quote-server.glitch.me/quotes/random')
       .then((response) => response.json())
       .then((jsonData) => {
         setRandomData(jsonData)

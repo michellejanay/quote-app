@@ -13,7 +13,7 @@ const Quotes = () => {
   // }
 
   useEffect(() => {
-    fetch('http://michellejanay-quote-server.glitch.me/quotes')
+    fetch('https://michellejanay-quote-server.glitch.me/quotes')
       .then((response) => response.json())
       .then((data) => setData(data))
   }, [])
