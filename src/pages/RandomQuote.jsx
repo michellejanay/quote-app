@@ -23,7 +23,7 @@ const RandomQuote = () => {
     <div>
       <Nav />
       {[randomData].map((q, i) => (
-        <Quote quote={q.quote} author={q.author} key={i} />
+        <Quote quote={q.quote} author={q.author} key={`id-${i}`} />
       ))}
       <Btn randomClick={randomClick} />
     </div>

@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import Quote from '../components/Quote'
 
 const Quotes = () => {
-  const [search, setSearch] = useState()
+  // const [search, setSearch] = useState()
   const [data, setData] = useState([])
 
   // const handleSearch = (e) => {
