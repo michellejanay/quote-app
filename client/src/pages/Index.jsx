@@ -8,7 +8,7 @@ const Index = () => {
         This app was created using <strong>Node.js</strong>,
         <strong>Express.js</strong> for the backend, <br />
         Glitch for <strong>API</strong> data hosting/fetching, <br /> and
-        <strong> React.js</strong> for the Frontend.
+        <strong> React.js/React Router</strong> for the Frontend.
       </p>
       <p>
         This was my first Full Stack app, and I hope you enjoy using it as much
