@@ -7,7 +7,7 @@
 }
 nav {
   background-color: black;
-  padding: 2rem;
+  padding: 1rem;
 }
 nav ul {
   display: flex;
@@ -20,20 +20,36 @@ nav ul li a {
   color: white;
   text-decoration: none;
 }
+nav ul li a:hover {
+  color: yellow;
+}
 .bi-search {
   padding: 0 0.5rem;
 }
 .index-page {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  padding: 0 2rem;
+  height: 90vh;
+}
+h1 {
+  padding: 1em;
+}
+p {
+  padding: 2em;
+  margin: 2em;
 }
 .quotes-header {
   padding: 2rem;
 }
 article {
-  padding: 2rem;
-  margin: 1rem;
+  padding: 3rem;
+  margin: 3rem;
+}
+article h3 {
+  font-size: 3em;
+}
+article p {
+  font-size: 2em;
 }
