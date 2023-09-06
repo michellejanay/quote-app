@@ -1,11 +1,12 @@
-import './App.css'
-import React from 'react'
-import 'bootstrap-icons/font/bootstrap-icons.css'
-import { BrowserRouter, Route, Routes, Link } from 'react-router-dom'
-import Quotes from './pages/Quotes'
-import RandomQuote from './pages/RandomQuote'
-import Index from './pages/Index'
-import 'bootstrap/dist/css/bootstrap.min.css'
+import "./App.css";
+import React from "react";
+import "bootstrap-icons/font/bootstrap-icons.css";
+import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
+import Quotes from "./pages/Quotes";
+import RandomQuote from "./pages/RandomQuote";
+import Index from "./pages/Index";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Footer } from "./components/Footer";
 
 const App = () => {
   return (
@@ -30,8 +31,9 @@ const App = () => {
           <Route path="/random-quote/" element={<RandomQuote />} />
         </Routes>
       </BrowserRouter>
+      <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
