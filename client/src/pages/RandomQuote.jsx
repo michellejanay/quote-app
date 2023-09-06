@@ -1,33 +1,36 @@
-import React, { useState, useEffect } from 'react'
-import Btn from '../components/Btn'
-import Nav from '../components/Nav'
-import Quote from '../components/Quote'
+import React, { useState, useEffect } from "react";
+import Btn from "../components/Btn";
+import Quote from "../components/Quote";
+import { PropagateLoader } from "react-spinners";
 
 const RandomQuote = () => {
-  const [randomData, setRandomData] = useState([])
-  const [clicked, setClicked] = useState(true)
+  const [randomData, setRandomData] = useState([]);
+  const [clicked, setClicked] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   const randomClick = () => {
-    setClicked(!clicked)
-  }
+    setClicked(!clicked);
+  };
 
   useEffect(() => {
-    fetch('https://michellejanay-quote-server.glitch.me/quotes/random')
+    fetch("https://michellejanay-quote-server.glitch.me/quotes/random")
       .then((response) => response.json())
       .then((jsonData) => {
-        setRandomData(jsonData)
+        setRandomData(jsonData);
       })
-  }, [clicked])
+      .then(setLoading(false));
+  }, [clicked]);
 
   return (
-    <div>
-      <Nav />
-      {[randomData].map((q, i) => (
-        <Quote quote={q.quote} author={q.author} key={`id-${i}`} />
-      ))}
+    <div className="quotes">
+      {loading && <PropagateLoader />}
+      {randomData &&
+        [randomData].map((q, i) => (
+          <Quote quote={q.quote} author={q.author} key={`id-${i}`} />
+        ))}
       <Btn randomClick={randomClick} />
     </div>
-  )
-}
+  );
+};
 
-export default RandomQuote
+export default RandomQuote;
